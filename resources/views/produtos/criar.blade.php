@@ -7,5 +7,29 @@
 </head>
 <body>
     <h1>Criar Produto</h1>
+    <form method="post" action="{{route('produto.salvar')}}">
+        @csrf
+        @method('post')
+        <div>
+            <label>Nome</label>
+            <input type="text" name="nome" placeholder="Nome" />
+        </div>
+        <div>
+            <label>Quantidade</label>
+            <input type="text" name="quantidade" placeholder="Quantidade" />
+        </div>
+        <div>
+            <label>Preço</label>
+            <input type="text" name="preco" placeholder="Preço" />
+        </div>
+        <div>
+            <label>Descrição</label>
+            <input type="text" name="descricao" placeholder="Descrição" />
+        </div>
+        <div>
+            
+            <input type="submit" value="salvar"/>
+        </div>
+    </form>
 </body>
 </html>
