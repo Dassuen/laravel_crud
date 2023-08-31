@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * Roda a migração da tabela para o DB.
      */
     public function up(): void
     {
@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string("nome");
             $table->integer("quantidade");
-            $tabel->text("descricao");
+            $table->decimal("preco");
+            $table->text("descricao");
             $table->timestamps();
         });
     }
