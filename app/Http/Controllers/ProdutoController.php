@@ -10,7 +10,9 @@ class ProdutoController extends Controller
     //
     public function index()
     {
-        return view('produtos.index');
+        $produtos = Produtos::all();
+        return view('produtos.index', ['produtos' => $produtos]);
+        
     }
     public function criar()
     {
@@ -22,7 +24,7 @@ class ProdutoController extends Controller
         $data = $request->validate([
             'nome' => 'required',
             'quantidade' => 'required|numeric',
-            'preco' => 'required|decimal:2',
+            'preco' => 'required|decimal:0,2',
             'descricao' => 'nullable'
         ]);
 
