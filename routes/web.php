@@ -28,3 +28,6 @@ Route::post('/produto/salvar', [ProdutoController::class, 'salvar'])->name('prod
 
 // PUT
 Route::put('/produto/{produto}/atualizar', [ProdutoController::class, 'atualizar'])->name('produto.atualizar');
+
+// DELETE
+Route::delete('/produto/{produto}/deletar', [ProdutoController::class, 'deletar'])->name('produto.deletar');

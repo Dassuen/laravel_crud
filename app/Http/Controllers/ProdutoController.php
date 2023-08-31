@@ -31,7 +31,7 @@ class ProdutoController extends Controller
         // Criação do produto pela model
         $novoProduto = Produtos::create($data);
 
-        // Redirecionar caso sucesso 
+        // Redirecionar caso tenha cadastrado
         return redirect(route('produto.index'));
     }
     public function editar(Produtos $produto)
@@ -51,7 +51,14 @@ class ProdutoController extends Controller
         // Atualizar o produto
         $produto->update($data);
 
-        // Redirecionar caso sucesso 
+        // Redirecionar caso tenha sido atualizado 
         return redirect(route('produto.index'))->with('success', 'Produto Atualizado!');
+    }
+    public function deletar(Produtos $produto)
+    {
+        $produto->delete();
+
+        // Redirecionar caso tenha sido deletado
+        return redirect(route('produto.index'))->with('success', 'Produto Deletado!');
     }
 }
