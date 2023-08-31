@@ -21,6 +21,10 @@ Route::get('/', function () {
 // GETS
 Route::get('/produto', [ProdutoController::class, 'index'])->name('produto.index');
 Route::get('/produto/criar', [ProdutoController::class, 'criar'])->name('produto.criar');
+Route::get('/produto/{produto}/editar', [ProdutoController::class, 'editar'])->name('produto.editar');
 
 // POSTS
 Route::post('/produto/salvar', [ProdutoController::class, 'salvar'])->name('produto.salvar');
+
+// PUT
+Route::put('/produto/{produto}/atualizar', [ProdutoController::class, 'atualizar'])->name('produto.atualizar');

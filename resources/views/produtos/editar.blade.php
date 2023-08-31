@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Criar Produto</h1>
+    <h1>Editar Produto</h1>
 
     <div>
         @if($errors->any())
@@ -24,28 +24,28 @@
 
 
 
-    <form method="post" action="{{route('produto.salvar')}}">
+    <form method="post" action="{{route('produto.atualizar', ['produto' => $produto])}}">
         @csrf
-        @method('post')
+        @method('put')
         <div>
             <label>Nome</label>
-            <input type="text" name="nome" placeholder="Nome" />
+            <input type="text" name="nome" placeholder="Nome" value="{{$produto->nome}}" />
         </div>
         <div>
             <label>Quantidade</label>
-            <input type="text" name="quantidade" placeholder="Quantidade" />
+            <input type="text" name="quantidade" placeholder="Quantidade" value="{{$produto->quantidade}}" />
         </div>
         <div>
             <label>Preço</label>
-            <input type="text" name="preco" placeholder="Preço" />
+            <input type="text" name="preco" placeholder="Preço" value="{{$produto->preco}}"/>
         </div>
         <div>
             <label>Descrição</label>
-            <input type="text" name="descricao" placeholder="Descrição" />
+            <input type="text" name="descricao" placeholder="Descrição" value="{{$produto->descricao}}"/>
         </div>
         <div>
             
-            <input type="submit" value="Salvar"/>
+            <input type="submit" value="Atualizar"/>
         </div>
     </form>
 </body>
