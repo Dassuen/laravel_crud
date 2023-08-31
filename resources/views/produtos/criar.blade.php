@@ -19,11 +19,6 @@
         @endif
     </div>
 
-
-
-
-
-
     <form method="post" action="{{route('produto.salvar')}}">
         @csrf
         @method('post')
